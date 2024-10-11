@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
+  namespace: expense
   labels:
     app: mysql
 spec:
@@ -16,6 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service
+  namespace: expense
 spec:
   selector:
     app: mysql
@@ -29,6 +31,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql
+  namespace: expense
 spec:
   selector:
     matchLabels:
